@@ -1,19 +1,23 @@
-"use client"
-import Image from "next/image";
-import styles from "./page.module.css";
-import Script from "next/script";
+import Footer from "@/components/menu/footer";
+import Header from "@/components/menu/header";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-     
-          <div className="logo">Regal Mark</div>
-          <div className="saia-widget-container center"></div>
+   <div className="min-h-screen flex flex-col">
+   
+      <Header />
 
-<Script onLoad={() => console.log("Get measure loaded")} id="saia-mtm-integration" async src="https://mtm-widget.3dlook.me/integration.js" data-public-key="OTkxMA:1sVZFP:Gm2sx8FOzBxNsrIWg4Wex3fNb3osqEZk1N3NfVtLiSA">
-</Script>
-
-
-    </main>
+      <main className="flex-grow bg-gray-50 flex items-center justify-center">
+        <div className="text-center p-8">
+          <h1 className="text-5xl font-extrabold mb-4 text-gray-800">Discover Your Style</h1>
+          <p className="text-lg text-gray-600 mb-6">Bold, Urban, Unapologetic – Welcome to Regal Mark.</p>
+          <Link href="/shop">
+            <span className="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition">Shop Now</span>
+          </Link>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }
